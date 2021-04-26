@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 //IMPORT MODULE SECTION
 import auth from './stores/auth.js'
+import outlet from './stores/outlet.js'
 
 Vue.use(Vuex)
 
@@ -10,7 +11,8 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
     //SEMUA MODULE YANG DIBUAT AKAN DITEPATKAN DIDALAM BAGIAN INI DAN DIPISAHKAN DENGAN KOMA UNTUK SETIAP MODULE-NYA
     modules: {
-        auth
+        auth,
+        outlet
     },
   	//STATE HAMPIR SERUPA DENGAN PROPERTY DATA DARI COMPONENT HANYA SAJA DAPAT DIGUNAKAN SECARA GLOBAL
     state: {
@@ -18,6 +20,7 @@ const store = new Vuex.Store({
         token: localStorage.getItem('token'),
         errors: []
     },
+
     getters: {
         //KITA MEMBUAT SEBUAH GETTERS DENGAN NAMA isAuth
         //DIMANA GETTERS INI AKAN BERNILAI TRUE/FALSE DENGAN KONDISI BERDASARKAN
